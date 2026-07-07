@@ -1,0 +1,22 @@
+{
+  "project_name": "기본 프로젝트",
+  "description": "대정NEXT Sprint 2 입력센터 기본 설정",
+  "exchange": "Binance",
+  "api_key": "",
+  "secret_key": "",
+  "passphrase": "",
+  "strategy": "EMA Cross",
+  "symbol": "BTCUSDT",
+  "initial_capital": "10000000",
+  "amount": "10000000",
+  "max_invest_ratio": "30",
+  "leverage": "1",
+  "max_positions": "1",
+  "stop_loss": "2",
+  "take_profit": "5",
+  "daily_max_loss": "10",
+  "auto_stop": true,
+  "auto_connect": false,
+  "auto_run": false,
+  "auto_save": true
+}

@@ -1,0 +1,16 @@
+{
+  "project_name": "",
+  "description": "",
+  "exchange": "",
+  "api_key": "",
+  "secret_key": "",
+  "strategy": "",
+  "symbol": "",
+  "amount": "",
+  "leverage": "",
+  "stop_loss": "",
+  "take_profit": "",
+  "auto_connect": false,
+  "auto_run": false,
+  "auto_save": true
+}

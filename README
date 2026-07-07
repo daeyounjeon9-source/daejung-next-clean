@@ -1,0 +1,13 @@
+대정NEXT v02.1 - Sprint 1 메인 대시보드 고도화
+
+실행 방법
+1) 터미널에서 daejungnext_v02 폴더로 이동합니다.
+2) python main.py 를 실행합니다.
+
+이번 적용 내용
+- 대중NEXT 표기를 대정NEXT로 수정
+- 메인 대시보드 카드 12개 확장
+- 상단 상태바 개선
+- 빠른 실행 버튼 추가
+- API ONLINE / 실행 RUNNING / 중지 READY 테스트 연결
+- 최근 로그와 운영 메모 표시

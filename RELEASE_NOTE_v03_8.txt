@@ -1,0 +1,13 @@
+DAEJUNGNEXT v03.8 Release Candidate
+
+추가 내용
+- RC 점검 페이지
+- release_manager.py
+- 배포 전 필수 파일 점검
+- RC 리포트 JSON 저장
+- version.json v03.8 갱신
+- 릴리스 후보 가이드 문서
+
+실행
+cd Desktop\DAEJUNGNEXT_V02\daejungnext_v02
+python main.py

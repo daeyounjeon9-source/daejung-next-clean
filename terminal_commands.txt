@@ -1,0 +1,8 @@
+cd %USERPROFILE%\Desktop\DAEJUNGNEXT_V02\daejungnext_v02
+dir
+install.bat
+run.bat
+
+If PowerShell blocks .bat, run:
+.\install.bat
+.\run.bat

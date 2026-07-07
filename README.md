@@ -1,16 +1,24 @@
-# React + Vite
+# DAEJUNGNEXT V02 CORE EXTENDED
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 실행
+```bash
+npm install
+npm start
+```
 
-Currently, two official plugins are available:
+브라우저에서 `http://localhost:1573/login.html`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+테스트 계정:
+- ID: admin
+- PW: 1234
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 이번 누적 작업
+- CORE 운영센터 Dashboard 유지
+- 메뉴 클릭 페이지 이동
+- 카드 클릭 페이지 이동
+- 검색 Enter 시 관련 화면 이동
+- 회원 CSV 내보내기 기능
+- 필터 적용 기능
+- 상세/승인/설정/로그/보기 버튼 동작
+- 공지 작성, 답변 템플릿, 문의 답변, 정책 수정 모달 추가
+- 저장/처리 Toast 알림 추가

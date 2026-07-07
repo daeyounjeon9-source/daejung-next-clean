@@ -1,0 +1,38 @@
+{
+  "name": "EMA_RSI_SAMPLE",
+  "description": "EMA trend filter + RSI entry sample strategy.",
+  "rules": {
+    "entry": [
+      {
+        "left": "EMA20",
+        "operator": ">",
+        "right": "EMA60"
+      },
+      {
+        "left": "RSI14",
+        "operator": "<",
+        "right": 35
+      }
+    ],
+    "exit": [
+      {
+        "left": "profit_rate",
+        "operator": ">=",
+        "right": 5
+      },
+      {
+        "left": "loss_rate",
+        "operator": "<=",
+        "right": -2
+      }
+    ]
+  },
+  "risk": {
+    "take_profit": 5.0,
+    "stop_loss": 2.0,
+    "leverage": 3,
+    "max_position_ratio": 30,
+    "daily_max_loss": 10
+  },
+  "status": "draft"
+}

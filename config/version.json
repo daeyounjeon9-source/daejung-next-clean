@@ -1,0 +1,8 @@
+{
+  "version": "v03.8",
+  "channel": "release-candidate",
+  "last_checked": "-",
+  "safe_mode": true,
+  "live_trading_enabled": false,
+  "trade_enabled": false
+}

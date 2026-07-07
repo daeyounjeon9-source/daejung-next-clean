@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DAEJUNG NEXT CORE</title>
+  <style>
+    :root{
+      --bg:#f4f7fb; --panel:#ffffff; --ink:#162033; --muted:#6b778c; --line:#e5ebf3;
+      --blue:#2563eb; --blue2:#1d4ed8; --green:#16a34a; --red:#dc2626; --orange:#f97316;
+      --purple:#7c3aed; --shadow:0 18px 50px rgba(15,23,42,.08); --radius:18px;
+    }
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,Apple SD Gothic Neo,Malgun Gothic,Segoe UI,sans-serif;background:var(--bg);color:var(--ink)}
+    .app{display:grid;grid-template-columns:280px 1fr;min-height:100vh}.sidebar{background:#0f172a;color:#dbeafe;padding:24px 18px;position:sticky;top:0;height:100vh;overflow:auto}.brand{display:flex;align-items:center;gap:12px;margin-bottom:28px}.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);display:grid;place-items:center;font-weight:900;color:#fff}.brand h1{font-size:18px;line-height:1.1;margin:0;color:#fff}.brand span{font-size:12px;color:#93a4bc}.nav-title{font-size:11px;color:#64748b;margin:22px 12px 8px;text-transform:uppercase;letter-spacing:.12em}.nav button{width:100%;border:0;background:transparent;color:#cbd5e1;padding:13px 14px;margin:3px 0;border-radius:13px;text-align:left;display:flex;align-items:center;gap:11px;cursor:pointer;font-weight:700}.nav button:hover,.nav button.active{background:#1e293b;color:#fff}.nav small{margin-left:auto;color:#94a3b8}.content{min-width:0}.topbar{height:78px;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 30px;position:sticky;top:0;z-index:5}.search{display:flex;align-items:center;gap:10px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:999px;padding:12px 18px;min-width:420px}.search input{border:0;background:transparent;outline:0;width:100%;font-size:14px}.top-actions{display:flex;align-items:center;gap:12px}.pill{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 14px;font-weight:800;color:#334155}.user{display:flex;align-items:center;gap:10px}.avatar{width:38px;height:38px;border-radius:999px;background:#dbeafe;color:#1d4ed8;display:grid;place-items:center;font-weight:900}.page{padding:30px}.hero{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px}.hero h2{font-size:31px;margin:0 0 8px}.hero p{margin:0;color:var(--muted)}.btn{border:0;border-radius:12px;background:var(--blue);color:#fff;font-weight:800;padding:12px 16px;cursor:pointer}.btn.ghost{background:#fff;color:#334155;border:1px solid var(--line)}.grid{display:grid;gap:18px}.kpis{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:22px}.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:21px}.kpi{cursor:pointer;transition:.18s}.kpi:hover{transform:translateY(-3px);box-shadow:0 24px 70px rgba(15,23,42,.12)}.kpi .label{color:var(--muted);font-size:13px;font-weight:800}.kpi .value{font-size:29px;font-weight:900;margin:10px 0}.trend{font-size:13px;font-weight:900}.up{color:var(--green)}.warn{color:var(--orange)}.down{color:var(--red)}.main-grid{grid-template-columns:1.5fr .9fr}.section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}.section-title h3{margin:0;font-size:18px}.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.flow .step{border:1px solid var(--line);border-radius:15px;padding:16px;background:#fbfdff}.step strong{display:block;margin-bottom:6px}.step span{font-size:12px;color:var(--muted)}.work-grid{grid-template-columns:repeat(3,1fr)}.work{display:flex;gap:14px;align-items:flex-start;cursor:pointer}.icon{width:42px;height:42px;border-radius:14px;background:#eff6ff;display:grid;place-items:center;font-size:21px}.work h4{margin:0 0 5px}.work p{margin:0;color:var(--muted);font-size:13px;line-height:1.45}.badge{display:inline-flex;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:900;background:#eff6ff;color:#1d4ed8}.badge.orange{background:#fff7ed;color:#c2410c}.badge.green{background:#ecfdf5;color:#15803d}.badge.red{background:#fef2f2;color:#b91c1c}table{width:100%;border-collapse:collapse}th,td{padding:14px 10px;border-bottom:1px solid var(--line);text-align:left;font-size:14px}th{font-size:12px;color:#64748b;text-transform:uppercase}.page-panel{display:none}.page-panel.active{display:block}.toolbar{display:flex;gap:10px;justify-content:space-between;margin-bottom:16px}.filters{display:flex;gap:10px}.filters input,.filters select{border:1px solid var(--line);background:#fff;border-radius:12px;padding:11px 13px}.detail-layout{display:grid;grid-template-columns:1fr 330px;gap:18px}.side-card li{margin:10px 0;color:#475569}.timeline{display:grid;gap:12px}.event{display:flex;gap:12px}.dot{width:10px;height:10px;border-radius:99px;background:var(--blue);margin-top:6px}.event p{margin:0;color:var(--muted);font-size:13px}.logout{background:#0f172a;color:#fff}
+
+    .toast{position:fixed;right:24px;bottom:24px;background:#0f172a;color:#fff;padding:14px 18px;border-radius:14px;box-shadow:0 20px 60px rgba(2,6,23,.25);display:none;z-index:50;font-weight:800}
+    .modal-backdrop{position:fixed;inset:0;background:rgba(15,23,42,.45);display:none;align-items:center;justify-content:center;z-index:40;padding:20px}
+    .modal{width:min(720px,96vw);background:#fff;border-radius:22px;box-shadow:0 30px 100px rgba(0,0,0,.28);overflow:hidden}
+    .modal header{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid var(--line)}
+    .modal header h3{margin:0}.modal .body{padding:22px 24px;color:#475569;line-height:1.6}.modal .actions{display:flex;justify-content:flex-end;gap:10px;padding:18px 24px;background:#f8fafc;border-top:1px solid var(--line)}
+    .close-x{border:0;background:#f1f5f9;border-radius:10px;padding:8px 11px;cursor:pointer;font-weight:900}
+    .action-link{border:0;background:#eff6ff;color:#1d4ed8;border-radius:999px;padding:8px 12px;font-weight:900;cursor:pointer}
+    .row-selected{outline:2px solid #2563eb22;background:#f8fbff}
+    .empty{padding:22px;text-align:center;color:#64748b;font-weight:800}
+    .mini-form{display:grid;gap:12px}.mini-form label{font-weight:900;color:#334155}.mini-form input,.mini-form select,.mini-form textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px 13px;font:inherit}.mini-form textarea{min-height:90px;resize:vertical}
+
+    @media(max-width:1100px){.app{grid-template-columns:1fr}.sidebar{height:auto;position:relative}.kpis,.work-grid,.main-grid,.detail-layout{grid-template-columns:1fr}.search{min-width:0}.topbar{position:relative;flex-direction:column;height:auto;gap:12px;padding:16px}.flow{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<script>if(!localStorage.getItem('token')) location.href='/login.html';</script>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><div class="logo">DN</div><div><h1>DAEJUNG NEXT</h1><span>CORE OPERATION CENTER</span></div></div>
+    <div class="nav">
+      <div class="nav-title">Control</div>
+      <button class="active" data-page="dashboard">🏠 Dashboard <small>Live</small></button>
+      <button data-page="platform">🧭 Platform <small>12</small></button>
+      <button data-page="users">👥 Users <small>New</small></button>
+      <button data-page="orders">📦 Orders <small>48</small></button>
+      <button data-page="payments">💳 Payment <small>8</small></button>
+      <div class="nav-title">Service</div>
+      <button data-page="support">🎧 Customer Support <small>31</small></button>
+      <button data-page="cms">📣 Guide / CMS <small>5</small></button>
+      <button data-page="auth">🔐 Login / Auth</button>
+      <div class="nav-title">System</div>
+      <button data-page="analytics">📈 Analytics</button>
+      <button data-page="monitoring">🖥 Monitoring</button>
+      <button data-page="settings">⚙ Settings</button>
+    </div>
+  </aside>
+  <main class="content">
+    <header class="topbar">
+      <div class="search">🔎 <input id="globalSearch" placeholder="회원, 주문, 결제, 공지, 시스템 로그 통합 검색" /></div>
+      <div class="top-actions"><span class="pill">운영 알림 9</span><span class="pill">KR / JP / US</span><div class="user"><div class="avatar">A</div><b>Admin</b></div><button class="btn logout" onclick="logout()">Logout</button></div>
+    </header>
+    <div class="page">
+      <section id="dashboard" class="page-panel active">
+        <div class="hero"><div><h2>Platform Dashboard</h2><p>본사 운영센터 관제 화면입니다. 카드 클릭 시 전문 업무 화면으로 이동합니다.</p></div><button class="btn" onclick="openPage('monitoring')">실시간 모니터링</button></div>
+        <div class="grid kpis">
+          <div class="card kpi" onclick="openPage('users')"><div class="label">전체 회원</div><div class="value">128,430</div><div class="trend up">▲ 12.4% 증가</div></div>
+          <div class="card kpi" onclick="openPage('orders')"><div class="label">처리 필요 주문</div><div class="value">486</div><div class="trend warn">오늘 48건 대기</div></div>
+          <div class="card kpi" onclick="openPage('payments')"><div class="label">결제/환불 이슈</div><div class="value">18</div><div class="trend down">긴급 3건</div></div>
+          <div class="card kpi" onclick="openPage('support')"><div class="label">고객지원 문의</div><div class="value">312</div><div class="trend warn">미답변 31건</div></div>
+        </div>
+        <div class="grid main-grid">
+          <div class="card"><div class="section-title"><h3>운영 업무 바로가기</h3><span class="badge">Smart Flow</span></div><div class="grid work-grid">
+            <div class="card work" onclick="openPage('platform')"><div class="icon">🧭</div><div><h4>플랫폼 운영</h4><p>입점, 상품, 정책, 국가별 서비스 상태를 확인합니다.</p></div></div>
+            <div class="card work" onclick="openPage('payments')"><div class="icon">💳</div><div><h4>결제/정산</h4><p>승인 실패, 환불, PG 상태, 정산 흐름을 관리합니다.</p></div></div>
+            <div class="card work" onclick="openPage('cms')"><div class="icon">📣</div><div><h4>안내 서비스</h4><p>공지사항, FAQ, 도움말, 팝업 메시지를 운영합니다.</p></div></div>
+            <div class="card work" onclick="openPage('auth')"><div class="icon">🔐</div><div><h4>로그인/인증</h4><p>소셜 로그인, 휴대폰 인증, 2단계 인증을 설정합니다.</p></div></div>
+            <div class="card work" onclick="openPage('support')"><div class="icon">🎧</div><div><h4>고객지원</h4><p>문의 유형, 답변 템플릿, 처리 이력을 관리합니다.</p></div></div>
+            <div class="card work" onclick="openPage('monitoring')"><div class="icon">🖥</div><div><h4>시스템 상태</h4><p>API, 서버, 알림, 로그 상태를 점검합니다.</p></div></div>
+          </div></div>
+          <div class="card"><div class="section-title"><h3>운영 Flow</h3><span class="badge green">정상</span></div><div class="flow"><div class="step"><strong>가입</strong><span>회원/인증</span></div><div class="step"><strong>구매</strong><span>주문/결제</span></div><div class="step"><strong>처리</strong><span>CS/환불</span></div><div class="step"><strong>정산</strong><span>PG/회계</span></div><div class="step"><strong>분석</strong><span>AI/통계</span></div></div><br><div class="timeline"><div class="event"><span class="dot"></span><div><b>결제 실패율 상승 감지</b><p>간편결제 모듈 8건 확인 필요</p></div></div><div class="event"><span class="dot"></span><div><b>공지 예약 발행</b><p>7월 서비스 점검 안내 등록됨</p></div></div><div class="event"><span class="dot"></span><div><b>고객 문의 집중</b><p>배송 문의 카테고리 증가</p></div></div></div></div>
+        </div>
+        <br><div class="card"><div class="section-title"><h3>최근 운영 작업</h3><span class="badge orange">확인 필요</span></div><table><tr><th>업무</th><th>상태</th><th>담당</th><th>시간</th></tr><tr><td>환불 승인 대기</td><td><span class="badge orange">대기</span></td><td>Payment</td><td>방금 전</td></tr><tr><td>FAQ 신규 문서 검수</td><td><span class="badge">검토</span></td><td>CMS</td><td>12분 전</td></tr><tr><td>회원 인증 실패 로그</td><td><span class="badge red">주의</span></td><td>Auth</td><td>27분 전</td></tr></table></div>
+      </section>
+      <section id="users" class="page-panel"><div class="hero"><div><h2>회원 관리</h2><p>회원 검색, 등급, 인증 상태, 이용 제한을 처리합니다.</p></div><button class="btn" onclick="exportTable('users')">회원 내보내기</button></div><div class="detail-layout"><div class="card"><div class="toolbar"><div class="filters"><input placeholder="이름/이메일 검색"><select><option>전체 등급</option><option>VIP</option><option>일반</option></select></div><button class="btn ghost" onclick="filterRows(this)">필터 적용</button></div><table><tr><th>회원</th><th>등급</th><th>상태</th><th>최근 접속</th><th>처리</th></tr><tr><td>kim***@mail.com</td><td>VIP</td><td><span class="badge green">정상</span></td><td>오늘</td><td><button class="action-link" onclick="rowDetail(this,'회원 상세')">상세</button></td></tr><tr><td>lee***@mail.com</td><td>일반</td><td><span class="badge orange">인증대기</span></td><td>어제</td><td><button class="action-link" onclick="approveRow(this)">승인</button></td></tr><tr><td>park***@mail.com</td><td>일반</td><td><span class="badge red">제한</span></td><td>3일 전</td><td><button class="action-link" onclick="rowDetail(this,'검토 처리')">검토</button></td></tr></table></div><div class="card side-card"><h3>회원 업무</h3><ul><li>휴대폰/이메일 인증 관리</li><li>등급 및 쿠폰 권한 관리</li><li>이용 제한/해제 이력</li><li>개인정보 요청 처리</li></ul></div></div></section>
+      <section id="payments" class="page-panel"><div class="hero"><div><h2>결제 / 정산 관리</h2><p>결제 방식, 승인 실패, 환불, PG 연동 상태를 관리합니다.</p></div><button class="btn" onclick="openModal('PG 상태 확인','카드/간편결제/계좌이체 모듈을 점검했습니다. 간편결제 응답 시간이 높아 로그 확인이 필요합니다.')">PG 상태 확인</button></div><div class="grid kpis"><div class="card kpi"><div class="label">오늘 결제</div><div class="value">₩48.2M</div><div class="trend up">승인율 98.7%</div></div><div class="card kpi"><div class="label">환불 요청</div><div class="value">32</div><div class="trend warn">검토 8건</div></div><div class="card kpi"><div class="label">정산 예정</div><div class="value">₩132M</div><div class="trend up">D+2</div></div><div class="card kpi"><div class="label">실패 결제</div><div class="value">18</div><div class="trend down">재시도 필요</div></div></div><div class="card"><table><tr><th>결제수단</th><th>상태</th><th>승인율</th><th>관리</th></tr><tr><td>카드</td><td><span class="badge green">정상</span></td><td>99.1%</td><td><button class="action-link" onclick="rowDetail(this,'결제수단 설정')">설정</button></td></tr><tr><td>간편결제</td><td><span class="badge orange">점검</span></td><td>96.3%</td><td><button class="action-link" onclick="rowDetail(this,'결제 로그')">로그</button></td></tr><tr><td>계좌이체</td><td><span class="badge green">정상</span></td><td>98.8%</td><td><button class="action-link" onclick="rowDetail(this,'결제수단 설정')">설정</button></td></tr></table></div></section>
+      <section id="support" class="page-panel"><div class="hero"><div><h2>고객지원 센터</h2><p>문의 유형, 답변 템플릿, 상담 이력, 처리 상태를 관리합니다.</p></div><button class="btn" onclick="openForm('답변 템플릿 추가','template')">답변 템플릿 추가</button></div><div class="card"><div class="toolbar"><div class="filters"><input placeholder="문의 검색"><select><option>전체 유형</option><option>결제</option><option>배송</option><option>계정</option></select></div></div><table><tr><th>문의</th><th>유형</th><th>상태</th><th>담당</th><th>처리</th></tr><tr><td>결제는 됐는데 주문이 안 보여요</td><td>결제</td><td><span class="badge orange">대기</span></td><td>CS1</td><td><button class="action-link" onclick="openForm('문의 답변 작성','reply')">답변</button></td></tr><tr><td>로그인이 안 됩니다</td><td>계정</td><td><span class="badge">검토</span></td><td>CS2</td><td><button class="action-link" onclick="rowDetail(this,'회원 상세')">상세</button></td></tr><tr><td>배송 상태 문의</td><td>배송</td><td><span class="badge green">완료</span></td><td>CS1</td><td><button class="action-link" onclick="rowDetail(this,'상담 이력')">이력</button></td></tr></table></div></section>
+      <section id="cms" class="page-panel"><div class="hero"><div><h2>안내 서비스 / CMS</h2><p>공지사항, FAQ, 도움말, 팝업 안내 메시지를 관리합니다.</p></div><button class="btn" onclick="openForm('새 공지 작성','notice')">새 공지 작성</button></div><div class="grid work-grid"><div class="card work"><div class="icon">📌</div><div><h4>공지사항</h4><p>점검/이벤트/정책 변경 공지 발행</p></div></div><div class="card work"><div class="icon">❓</div><div><h4>FAQ</h4><p>카테고리별 자주 묻는 질문 관리</p></div></div><div class="card work"><div class="icon">💬</div><div><h4>자동 안내 메시지</h4><p>로그인/결제/배송 단계별 안내</p></div></div></div><br><div class="card"><table><tr><th>콘텐츠</th><th>상태</th><th>노출</th><th>수정일</th></tr><tr><td>서비스 점검 안내</td><td><span class="badge green">예약</span></td><td>메인 팝업</td><td>오늘</td></tr><tr><td>결제 실패 FAQ</td><td><span class="badge">검수</span></td><td>도움말</td><td>어제</td></tr></table></div></section>
+      <section id="auth" class="page-panel"><div class="hero"><div><h2>로그인 / 인증 관리</h2><p>이메일, 소셜 로그인, 휴대폰 인증, 2단계 인증을 관리합니다.</p></div><button class="btn" onclick="saveAction('보안 정책이 저장되었습니다')">보안 정책 저장</button></div><div class="grid work-grid"><div class="card"><h3>이메일 로그인</h3><p>기본 로그인 활성화</p><span class="badge green">ON</span></div><div class="card"><h3>소셜 로그인</h3><p>Google / Naver / Kakao 연동 준비</p><span class="badge orange">설정 필요</span></div><div class="card"><h3>2단계 인증</h3><p>관리자 계정 필수 적용</p><span class="badge green">ON</span></div></div></section>
+      <section id="platform" class="page-panel"><div class="hero"><div><h2>플랫폼 운영</h2><p>상품, 주문 흐름, 정책, 국가별 서비스를 관제합니다.</p></div></div><div class="card"><table><tr><th>영역</th><th>상태</th><th>처리 필요</th><th>이동</th></tr><tr><td>상품 검수</td><td><span class="badge orange">대기</span></td><td>24건</td><td><button class="action-link" onclick="rowDetail(this,'관리 화면')">관리</button></td></tr><tr><td>주문 흐름</td><td><span class="badge green">정상</span></td><td>0건</td><td><button class="action-link" onclick="rowDetail(this,'상세 보기')">보기</button></td></tr><tr><td>정책 변경</td><td><span class="badge">검토</span></td><td>3건</td><td><button class="action-link" onclick="openForm('정책 수정','policy')">수정</button></td></tr></table></div></section>
+      <section id="orders" class="page-panel"><div class="hero"><div><h2>주문 관리</h2><p>주문 상태, 취소, 반품, 배송 흐름을 확인합니다.</p></div></div><div class="card"><table><tr><th>주문번호</th><th>상태</th><th>결제</th><th>CS</th></tr><tr><td>DN-202607-001</td><td><span class="badge green">배송중</span></td><td>완료</td><td>-</td></tr><tr><td>DN-202607-002</td><td><span class="badge orange">확인필요</span></td><td>실패</td><td>문의 있음</td></tr></table></div></section>
+      <section id="analytics" class="page-panel"><div class="hero"><div><h2>통계 / 분석</h2><p>매출, 회원, 주문, CS 데이터를 운영 관점에서 분석합니다.</p></div></div><div class="grid kpis"><div class="card"><h3>매출 추세</h3><p>주간 +14.2%</p></div><div class="card"><h3>회원 전환</h3><p>가입 → 구매 8.9%</p></div><div class="card"><h3>CS 집중</h3><p>배송 문의 41%</p></div><div class="card"><h3>AI 알림</h3><p>이상 결제 패턴 3건</p></div></div></section>
+      <section id="monitoring" class="page-panel"><div class="hero"><div><h2>시스템 모니터링</h2><p>서버, API, 결제 모듈, 인증 모듈 상태를 확인합니다.</p></div></div><div class="card"><table><tr><th>서비스</th><th>상태</th><th>응답시간</th><th>로그</th></tr><tr><td>API Gateway</td><td><span class="badge green">정상</span></td><td>84ms</td><td><button class="action-link" onclick="rowDetail(this,'상세 보기')">보기</button></td></tr><tr><td>Payment API</td><td><span class="badge orange">주의</span></td><td>221ms</td><td><button class="action-link" onclick="rowDetail(this,'로그 확인')">확인</button></td></tr><tr><td>Auth Service</td><td><span class="badge green">정상</span></td><td>102ms</td><td><button class="action-link" onclick="rowDetail(this,'상세 보기')">보기</button></td></tr></table></div></section>
+      <section id="settings" class="page-panel"><div class="hero"><div><h2>설정 / 권한</h2><p>관리자 권한, 메뉴 접근, 운영 정책을 설정합니다.</p></div><button class="btn" onclick="saveAction('관리자 권한 설정이 저장되었습니다')">권한 저장</button></div><div class="grid work-grid"><div class="card"><h3>Super Admin</h3><p>전체 메뉴 접근</p></div><div class="card"><h3>Payment Manager</h3><p>결제/환불 처리</p></div><div class="card"><h3>CS Manager</h3><p>문의/FAQ 관리</p></div></div></section>
+    </div>
+  </main>
+</div>
+
+<div id="toast" class="toast"></div>
+<div id="modalBackdrop" class="modal-backdrop" onclick="if(event.target.id==='modalBackdrop')closeModal()">
+  <div class="modal">
+    <header><h3 id="modalTitle">상세</h3><button class="close-x" onclick="closeModal()">닫기</button></header>
+    <div id="modalBody" class="body"></div>
+    <div class="actions"><button class="btn ghost" onclick="closeModal()">취소</button><button class="btn" onclick="saveAction('처리 내용이 저장되었습니다');closeModal()">저장/처리</button></div>
+  </div>
+</div>
+
+<script>
+function logout(){localStorage.removeItem('token');location.href='/login.html'}
+function openPage(id){
+  const target=document.getElementById(id);
+  if(!target){showToast('아직 준비 중인 화면입니다');return;}
+  document.querySelectorAll('.page-panel').forEach(p=>p.classList.remove('active'));
+  target.classList.add('active');
+  document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));
+  history.replaceState(null,'','#'+id);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function showToast(msg){
+  const t=document.getElementById('toast'); t.textContent=msg; t.style.display='block';
+  clearTimeout(window.__toastTimer); window.__toastTimer=setTimeout(()=>t.style.display='none',2200);
+}
+function openModal(title, body){
+  document.getElementById('modalTitle').textContent=title;
+  document.getElementById('modalBody').innerHTML=body;
+  document.getElementById('modalBackdrop').style.display='flex';
+}
+function closeModal(){document.getElementById('modalBackdrop').style.display='none'}
+function rowDetail(btn,title){
+  const row=[...btn.closest('tr').children].map(td=>td.innerText.trim()).filter(Boolean);
+  btn.closest('tr').classList.add('row-selected');
+  openModal(title, '<b>선택 항목</b><br>'+row.join(' / ')+'<br><br>이 화면에서 상세 확인, 승인, 보류, 이력 기록 처리를 할 수 있습니다.');
+}
+function approveRow(btn){
+  const row=btn.closest('tr');
+  row.querySelectorAll('.badge').forEach(b=>{b.className='badge green';b.textContent='승인완료'});
+  btn.textContent='완료'; btn.disabled=true;
+  showToast('승인 처리되었습니다');
+}
+function saveAction(msg){showToast(msg)}
+function exportTable(pageId){
+  const table=document.querySelector('#'+pageId+' table');
+  if(!table){showToast('내보낼 데이터가 없습니다');return;}
+  const rows=[...table.rows].map(r=>[...r.cells].map(c=>c.innerText.replace(/\n/g,' ').trim()).join(',')).join('\n');
+  const blob=new Blob(['\ufeff'+rows],{type:'text/csv;charset=utf-8'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='dae_next_'+pageId+'.csv'; a.click();
+  showToast('CSV 내보내기를 시작했습니다');
+}
+function filterRows(btn){
+  const panel=btn.closest('.page-panel');
+  const q=(panel.querySelector('input')?.value||'').toLowerCase();
+  let shown=0;
+  panel.querySelectorAll('table tr').forEach((tr,i)=>{
+    if(i===0){tr.style.display='';return;}
+    const ok=!q || tr.innerText.toLowerCase().includes(q);
+    tr.style.display=ok?'':'none'; if(ok)shown++;
+  });
+  showToast(shown+'개 항목이 표시됩니다');
+}
+function openForm(title,type){
+  const forms={
+    template:['템플릿명','문의 유형','답변 내용'],
+    notice:['공지 제목','노출 위치','공지 내용'],
+    reply:['답변 제목','처리 상태','답변 내용'],
+    policy:['정책명','적용 범위','변경 내용']
+  };
+  const labels=forms[type]||['제목','구분','내용'];
+  openModal(title, `<div class="mini-form">
+    <label>${labels[0]}</label><input placeholder="${labels[0]} 입력">
+    <label>${labels[1]}</label><select><option>전체</option><option>회원</option><option>결제</option><option>고객지원</option></select>
+    <label>${labels[2]}</label><textarea placeholder="${labels[2]} 입력"></textarea>
+  </div>`);
+}
+document.querySelectorAll('.nav button').forEach(btn=>btn.addEventListener('click',()=>openPage(btn.dataset.page)));
+document.getElementById('globalSearch').addEventListener('keydown',e=>{
+  if(e.key==='Enter'){
+    const q=e.target.value.trim();
+    if(!q){showToast('검색어를 입력하세요');return;}
+    const matches=[...document.querySelectorAll('.page-panel')].filter(p=>p.innerText.includes(q)).map(p=>p.id);
+    if(matches[0]){openPage(matches[0]);showToast('검색 결과 화면으로 이동했습니다: '+matches[0]);}
+    else showToast('검색 결과가 없습니다');
+  }
+});
+window.addEventListener('load',()=>{const id=location.hash.replace('#',''); if(id) openPage(id);});
+</script>
+</body>
+</html>
